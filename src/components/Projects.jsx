@@ -4,123 +4,71 @@ import project1 from "../assets/images/project1.png";
 import project2 from "../assets/images/project2.png";
 import project4 from "../assets/images/project4.png";
 import project5 from "../assets/images/project5.png";
-import project6 from "../assets/images/project6.png";
+import project6 from "../assets/images/project6.jpeg";
 
 const projects = [
   {
     id: 1,
-    title: "Resume ATS Score Analyzer",
+    title: "Haider Chemicals",
     image: project6,
-    desc: "An AI-powered resume analysis platform built for tech professionals to optimize their resumes for Applicant Tracking Systems (ATS). The application uses Groq AI to analyze resumes, provides detailed section-wise scoring, identifies missing keywords, and offers actionable suggestions for improvement. Features passwordless authentication with OTP-based email verification using Brevo SMTP.",
+    desc: "A modern, responsive e-commerce website developed for Haider Chemicals, a business specializing in toiletries, cleaning products, chemical raw materials, empty cans, and perfume essences. The platform provides an intuitive product browsing experience with category-based filtering, search functionality, and WhatsApp-based ordering, allowing customers to explore products and contact the business directly to place orders.",
     features: [
-      "AI-powered resume analysis using Groq API",
-      "ATS score (0-100) with detailed breakdown",
-      "Section-wise scoring: Formatting, Technical Skills, Experience, Projects, Education, Keywords",
-      "Identifies strengths, weaknesses, and missing keywords",
-      "Recommends skills to learn and provides actionable suggestions",
-      "Passwordless authentication with OTP-based email verification",
-      "Dark theme UI with Framer Motion animations",
-      "Secure JWT-based authentication with Spring Security",
-      "PDF text extraction using Apache PDFBox",
-      "Drag-and-drop resume upload with React Dropzone",
-      "Mobile-responsive design with Tailwind CSS",
-      "OTP verification using Brevo SMTP",
-      "Real-time analysis with loading states",
-      "Render free tier wake-up handling with retry mechanism"
+    "Modern and responsive user interface",
+    "Mobile, tablet, and desktop compatibility",
+    "Product catalog with multiple categories",
+    "Category-based product filtering",
+    "Search functionality to find products quickly",
+    "Dedicated products page with product cards",
+    "WhatsApp integration for direct product ordering",
+    "Pre-filled WhatsApp messages with product details",
+    "Dedicated order page and order navigation",
+    "Responsive navigation bar with mobile-friendly layout",
+    "Hero section with business branding",
+    "About Us and business information sections",
+    "Contact page with inquiry form",
+    "WhatsApp integration for customer inquiries",
+    "Google Maps integration for business location",
+    "Smooth navigation between website sections",
+    "Reusable React components for maintainable code"
     ],
-    tech: "React 19, TypeScript, Tailwind CSS, Framer Motion, Vite, Spring Boot 3, Java 21, Spring Security, JWT, Apache PDFBox, Groq API, PostgreSQL (Neon), Brevo SMTP, Docker, Render, Vercel",
-    github: "https://github.com/mohankumaronly/Resume-Ats-Score-Checker",
-    live: "https://profileatsscore.vercel.app",
+    tech: "React.js, JavaScript, HTML5, CSS3, React Router DOM, Framer Motion, Vite, WhatsApp Integration, Google Maps , vercel",
+    github: "https://github.com/fresherali/haiderchemicals",
+    live: "https://haiderchemicals-theta.vercel.app/",
     backend: "",
     swagger: "",
-    category: "AI & Resume Optimization"
+    category: "Business & E-commerce"
   },
   {
     id: 2,
-    title: "Tap Job Scraper & Alerts",
+    title: "Yummy Yummy",
     image: project1,
-    desc: "A full-stack job alert platform built with React, TypeScript, Tailwind CSS, and Spring Boot that automatically scrapes the latest job openings from Tap Academy. The system stores job listings in PostgreSQL, prevents duplicate entries, and sends instant email notifications to verified subscribers using the Brevo Email API.",
+    desc: "Yummy Yummy is full stack final year project it is a  professional food ordering platform built with React.js + Django REST Framework, Tailwind CSS, featuring JWT Authentication, JazzCash & EasyPaisa payment integration, real-time admin dashboard, and a stunning responsive UI",
     features: [
-      "Automated job scraping from Tap Academy",
-      "OTP-based email verification for subscribers",
-      "Instant email notifications using Brevo Email API",
-      "Cron-based scheduled job synchronization",
-      "Duplicate job detection and database storage",
-      "Browse and search active job listings",
-      "Secure REST APIs with Spring Security",
-      "Responsive frontend built with React and Tailwind CSS"
+      "Order History — Track all past and active orders with status",
+      "User Profile — Edit personal info, address, phone number",
+      "JWT Authentication — Access + Refresh tokens with auto-refresh",
+      "Email OTP — Professional HTML email for password reset via Gmail SMTP",
+      "Popular Dishes — Manage featured dishes shown on homepage",
+      "Password Management — Change password + forgot password with OTP via email",
+      "Contact Form — Direct message to restaurant",
+      "Fully Responsive — Works perfectly on mobile, tablet, and desktop",
+      "Full Menu — Browse 500+ dishes with category filter, search, and sort",
+      "Ultra-Fast Menu — All dishes loaded once and filtered client-side (zero re-fetches)",
+      "Smart Cart — Add, update quantity, remove items with live totals",
+      "Reviews & Feedback — Star ratings and written reviews",
+      "Cash on Delivery — Traditional COD option",
+      "💳 Dual Payment — JazzCash & EasyPaisa mobile wallet integration",
+      "Menu Management — Full CRUD for menu dishes with image upload",
+      "Categories — Add, edit, delete food categories",
+      "Feedback — View and moderate customer reviews",
     ],
-    tech: "React, TypeScript, Tailwind CSS, Spring Boot, Java 21, Spring Security, Spring Data JPA, Hibernate, PostgreSQL, NeonDB, Brevo Email API, Docker",
-    github: "https://github.com/mohankumaronly/Tap-Job-Scrapper",
-    live: "https://tapscraper.vercel.app/",
-    backend: "https://tapscraper.onrender.com/api",
-    swagger: "https://tapscraper.onrender.com/swagger-ui/index.html",
-    category: "Job Portal & Automation"
-  },
-  {
-    id: 3,
-    title: "NASA Cosmic Vault",
-    image: project2,
-    desc: "A responsive NASA-themed frontend website built with React and Tailwind CSS that displays daily space content using NASA's Astronomy Picture of the Day (APOD) API. The website automatically updates every day with the latest images and information published by NASA.",
-    features: [
-      "Daily NASA Astronomy Picture of the Day (APOD)",
-      "Automatic content updates using NASA API",
-      "Responsive UI built with Tailwind CSS",
-      "Modern React component-based architecture",
-      "Displays NASA image, title, explanation, and date",
-      "Fast deployment with Vercel"
-    ],
-    tech: "React, Tailwind CSS, NASA APOD API, JavaScript, Vercel",
-    github: "https://github.com/mohankumaronly/Cosmicvault",
-    live: "https://nasacosmicvault.vercel.app",
+    tech: "React, Django REST Framework, Tailwind CSS, MYSOL, pyhthon, ",
+    github: "https://github.com/fresherali/yummy-yummy",
+    live: "https://yummy-yummy-seven.vercel.app/",
     backend: "",
     swagger: "",
-    category: "Space & Astronomy"
+    category: "Food-Ordring website"
   },
-  {
-    id: 4,
-    title: "SQL Playground",
-    image: project4,
-    desc: "A frontend-only SQL Playground built with React and Tailwind CSS that allows users to write MySQL CREATE TABLE statements and instantly visualize database schema relationships. The application automatically generates an interactive ER diagram by detecting primary keys and foreign key connections between tables.",
-    features: [
-      "Write and edit MySQL CREATE TABLE statements",
-      "Automatic ER diagram generation from SQL",
-      "Visual foreign key relationship mapping",
-      "Interactive database schema visualization",
-      "Syntax-highlighted SQL editor",
-      "Responsive and modern UI built with Tailwind CSS",
-      "Drag, zoom, and reposition database tables",
-      "Export generated database diagrams"
-    ],
-    tech: "React, Tailwind CSS, JavaScript, MySQL Parser, React Flow, Vercel",
-    github: "https://github.com/mohankumaronly/sql-playground",
-    live: "https://sqldiagram.vercel.app",
-    backend: "",
-    swagger: "",
-    category: "Developer Tools"
-  },
-  {
-    id: 5,
-    title: "OrderUK – Food Delivery Landing Page",
-    image: project5,
-    desc: "A modern and responsive food delivery landing page built with React and Tailwind CSS by following a Figma design. The project showcases a clean user interface for browsing restaurants, food categories, exclusive offers, and promotional sections with a mobile-friendly layout.",
-    features: [
-      "Pixel-perfect implementation from Figma design",
-      "Responsive layout for desktop, tablet, and mobile",
-      "Modern navigation bar with authentication buttons",
-      "Exclusive offers and featured restaurant sections",
-      "Popular food categories showcase",
-      "Clean component-based React architecture",
-      "Smooth and interactive UI design",
-      "Optimized frontend deployment with Vercel"
-    ],
-    tech: "React, Tailwind CSS, JavaScript, Figma, Vercel",
-    github: "https://github.com/mohankumaronly/food-delivery-frontend-only",
-    live: "https://ordersuk.vercel.app",
-    backend: "",
-    swagger: "",
-    category: "Food & Restaurant"
-  }
 ];
 
 const openExternal = (url) => {

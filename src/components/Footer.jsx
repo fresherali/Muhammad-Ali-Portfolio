@@ -44,14 +44,14 @@ const Footer = () => {
             className="flex items-center gap-3"
           >
             <div className="w-8 h-8 rounded-lg bg-blue-600 dark:bg-blue-500 flex items-center justify-center text-white font-bold text-xs shadow-sm">
-              M
+              MA
             </div>
             <div>
               <p className="font-semibold text-gray-900 dark:text-white text-sm">
-                Mohan Kumar
+                Muhammmad Ali
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-500">
-                Java Full Stack Developer
+                MERN Stack Web Developer
               </p>
             </div>
           </motion.div>
@@ -84,7 +84,7 @@ const Footer = () => {
             className="flex gap-2"
           >
             <a
-              href="https://github.com/mohankumaronly"
+              href="https://github.com/fresherali"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -93,7 +93,7 @@ const Footer = () => {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://www.linkedin.com/in/mohan-kumar-3151a1308"
+              href="https://www.linkedin.com/in/muhammad-ali42-/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -102,7 +102,8 @@ const Footer = () => {
               <Linkedin className="w-4 h-4" />
             </a>
             <a
-              href="mailto:mohankumaronly81@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=m1.ali.h42@gmail.com"
+              target="_blank"
               className="p-2 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 border border-gray-200 dark:border-gray-700"
               aria-label="Email"
             >
@@ -122,11 +123,11 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500 dark:text-gray-500">
             <div className="flex items-center gap-1.5 flex-wrap justify-center">
               <span>© {currentYear}</span>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Mohan Kumar</span>
+              <span className="font-medium text-gray-700 dark:text-gray-300">Muhammad Ali</span>
               <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1">
                 Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> 
-                for the dev community
+                
               </span>
             </div>
 
@@ -134,20 +135,20 @@ const Footer = () => {
               <span className="text-gray-500 dark:text-gray-500">Built with</span>
               <span className="flex gap-1.5">
                 <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 text-[10px] font-medium">
-                  React
+                  React.js
+                </span>
+                <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 text-[10px] font-medium">
+                  Vite.js
                 </span>
                 <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 text-[10px] font-medium">
                   Tailwind
-                </span>
-                <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 text-[10px] font-medium">
-                  Framer Motion
                 </span>
               </span>
             </div>
           </div>
 
           {/* Tech stack tags */}
-          <div className="flex flex-wrap justify-center gap-1.5 mt-3">
+          {/* <div className="flex flex-wrap justify-center gap-1.5 mt-3">
             {["Java", "Spring Boot", "React", "PostgreSQL", "Tailwind CSS"].map((tech) => (
               <span
                 key={tech}
@@ -156,7 +157,7 @@ const Footer = () => {
                 {tech}
               </span>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </motion.footer>

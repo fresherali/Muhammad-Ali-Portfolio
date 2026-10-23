@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,65 +41,66 @@ const Contact = () => {
     if (submitStatus) setSubmitStatus(null);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setErrorMessage("Please fill in all fields");
-      return;
-    }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setErrorMessage("Please enter a valid email address");
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-    setErrorMessage("");
+  if (
+    !formData.name.trim() ||
+    !formData.email.trim() ||
+    !formData.message.trim()
+  ) {
+    setErrorMessage("Please fill in all fields");
+    return;
+  }
 
-    try {
-      initializeEmailJS();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  if (!emailRegex.test(formData.email)) {
+    setErrorMessage("Please enter a valid email address");
+    return;
+  }
 
-      if (!SERVICE_ID || !TEMPLATE_ID) {
-        throw new Error("EmailJS service or template ID is not configured");
-      }
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+  setErrorMessage("");
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_name: "Mohan",
-        reply_to: formData.email,
-      };
+  try {
+    // Replace with your WhatsApp number.
+    // Use country code, without +, spaces, or leading 0.
+    const phoneNumber = "923285872959";
 
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-      
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setErrorMessage("");
-      
-      setTimeout(() => setSubmitStatus(null), 5000);
-      
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setSubmitStatus("error");
-      setErrorMessage(
-        error.text || "Failed to send message. Please try again later."
-      );
-      
-      setTimeout(() => {
-        setSubmitStatus(null);
-        setErrorMessage("");
-      }, 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    const whatsappMessage = `New Portfolio Message
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+
+    setSubmitStatus("success");
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+    setTimeout(() => setSubmitStatus(null), 5000);
+  } catch (error) {
+    console.error("Error opening WhatsApp:", error);
+    setSubmitStatus("error");
+    setErrorMessage("Unable to open WhatsApp. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <section
@@ -140,27 +142,35 @@ const Contact = () => {
             {
               icon: Mail,
               label: "Email",
-              value: "mohankumaronly81@gmail.com",
-              href: "mailto:mohankumaronly81@gmail.com",
+              value: "m1.ali.h42@gmail.com",
+              href: "https://mail.google.com/mail/?view=cm&fs=1&to=m1.ali.h42@gmail.com",
               iconColor: "text-blue-600 dark:text-blue-400",
               bgColor: "bg-blue-50 dark:bg-blue-900/20"
             },
             {
               icon: MapPin,
               label: "Location",
-              value: "Available for Remote Work",
+              value: "locat in Pakistan, Lahore also Available for Remote Work",
               href: null,
               iconColor: "text-emerald-600 dark:text-emerald-400",
               bgColor: "bg-emerald-50 dark:bg-emerald-900/20"
             },
             {
-              icon: Clock,
-              label: "Response Time",
-              value: "Within 24 hours",
-              href: null,
+              icon: FaWhatsapp,
+              label: "WhatsApp number",
+              value: "+923285872959",
+              href: "https://wa.me/923285872959",
               iconColor: "text-purple-600 dark:text-purple-400",
               bgColor: "bg-purple-50 dark:bg-purple-900/20"
-            }
+            },
+            // {
+            //   icon: Clock,
+            //   label: "Response Time",
+            //   value: "Within 24 hours",
+            //   href: null,
+            //   iconColor: "text-purple-600 dark:text-purple-400",
+            //   bgColor: "bg-purple-50 dark:bg-purple-900/20"
+            // }
           ].map((item, index) => (
             <motion.div
               key={item.label}
@@ -204,7 +214,7 @@ const Contact = () => {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="https://github.com/mohankumaronly"
+            href="https://github.com/fresherali"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 shadow-sm text-sm font-medium"
@@ -216,7 +226,7 @@ const Contact = () => {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="https://www.linkedin.com/in/mohan-kumar-3151a1308"
+            href="https://www.linkedin.com/in/muhammad-ali42-/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 transition-all duration-300 shadow-sm text-sm font-medium"
@@ -228,7 +238,7 @@ const Contact = () => {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="mailto:mohankumaronly81@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=m1.ali.h42@gmail.com"
             className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 shadow-sm text-sm font-medium"
           >
             <Mail size={17} />
@@ -355,7 +365,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mt-10 text-xs text-gray-500 dark:text-gray-500 text-center"
         >
-          © {new Date().getFullYear()} Mohan. Crafted with ❤️ using React & Spring Boot
+          © {new Date().getFullYear()} Muhammad Ali. Crafted with ❤️ using React & the MERN Stack
         </motion.p>
       </div>
     </section>

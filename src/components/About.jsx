@@ -10,11 +10,13 @@ import {
   SparklesIcon,
   CheckCircleIcon
 } from "@heroicons/react/24/outline";
+import { FaHtml5, FaCss3Alt ,FaNodeJs } from "react-icons/fa";
+import { SiVite, SiExpress, SiMongodb } from "react-icons/si";
 
 const highlights = [
   {
-    title: "Secure Systems",
-    desc: "Implementing JWT authentication, email verification, password reset flows, and role-based access control using Spring Security.",
+    title: "Frontend Development",
+    desc: "Creating modern, responsive web applications using React.js,vite.js,JavaScript,HTML, and CSS, with reusable components, React Router navigation, and API integration, implementing product filtering, multipage navigation, interactive forms, and WhatsApp based ordering functionality.",
     icon: ShieldCheckIcon,
     bgColor: "bg-blue-50 dark:bg-blue-900/20",
     iconColor: "text-blue-600 dark:text-blue-400",
@@ -22,7 +24,7 @@ const highlights = [
   },
   {
     title: "Scalable Backends",
-    desc: "Building RESTful APIs with Spring Boot, Hibernate (JPA), and PostgreSQL, focusing on clean architecture and performance optimization.",
+    desc: "Building full-stack web applications with the MERN stack, including e-commerce websites, product management systems, user authentication, admin dashboards, and dynamic applications powered by RESTful APIs and MongoDB.",
     icon: ServerIcon,
     bgColor: "bg-indigo-50 dark:bg-indigo-900/20",
     iconColor: "text-indigo-600 dark:text-indigo-400",
@@ -30,7 +32,7 @@ const highlights = [
   },
   {
     title: "Cloud-Ready Apps",
-    desc: "Developing production ready applications using Neon PostgreSQL, secure authentication workflows, and responsive React frontends.",
+    desc: "Developing production ready applications using platforms like Vercel and Netlify for reliable online access, with responsive React frontends.",
     icon: CubeIcon,
     bgColor: "bg-teal-50 dark:bg-teal-900/20",
     iconColor: "text-teal-600 dark:text-teal-400",
@@ -39,24 +41,29 @@ const highlights = [
 ];
 
 const techStack = [
+  { name: "HTML5", icon: FaHtml5, color: "text-orange-600" },
+  { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600" },
   { name: "Java", icon: CodeBracketIcon, color: "text-red-500" },
-  { name: "Spring Boot", icon: CommandLineIcon, color: "text-emerald-600" },
-  { name: "React", icon: SparklesIcon, color: "text-blue-500" },
-  { name: "PostgreSQL", icon: CloudArrowUpIcon, color: "text-blue-700" },
+  { name: "React.js", icon: SparklesIcon, color: "text-blue-500" },
+  { name: "Vite.js", icon: SiVite, color: "text-purple-600" },
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-800" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
 ];
 
 const stats = [
-  { number: "3+", label: "Years of Learning", icon: UserGroupIcon },
-  { number: "5+", label: "Projects Completed", icon: CodeBracketIcon },
+  { number: "1+", label: "Years of Learning", icon: UserGroupIcon },
+  { number: "3+", label: "Projects Completed", icon: CodeBracketIcon },
   { number: "8+", label: "Technologies", icon: SparklesIcon },
   { number: "100%", label: "Commitment", icon: ShieldCheckIcon },
 ];
 
 const expertise = [
-  "Backend: Spring Boot, Spring Security, Hibernate (JPA), RESTful APIs",
-  "Frontend: React, Redux, Tailwind CSS, Responsive Design",
-  "Database: PostgreSQL, MySQL, Neon PostgreSQL",
-  "DevOps: Git, Docker, AWS, CI/CD Pipelines",
+  "Frontend: React.js, JavaScript (ES6+),Vite.js, HTML5, CSS3, Tailwind CSS, Responsive Design",
+  "Backend: Node.js, Express.js, RESTful APIs, Server-Side Development",
+  "Database: MongoDB, CRUD Operations, Database Integration",
+  "Tools & Deployment: Git, GitHub, Vercel, Netlify, npm, VS Code",
+  "Core Skills: React Router, Reusable Components, State Management, API Integration, Form Validation, Responsive Web Design",
 ];
 
 const About = () => {
@@ -96,7 +103,7 @@ const About = () => {
             className="lg:col-span-3"
           >
             <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a passionate <span className="font-semibold text-blue-600 dark:text-blue-400">Java Full Stack Developer</span> dedicated to building 
+              I'm a passionate <span className="font-semibold text-blue-600 dark:text-blue-400">MERN Full Stack Developer</span> dedicated to building 
               secure, scalable, and production-ready web applications. With a strong 
               foundation in both backend and frontend technologies, I create 
               comprehensive solutions that solve real-world problems.

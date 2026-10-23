@@ -10,24 +10,35 @@ import {
 const Experience = () => {
   const experiences = [
     {
-      title: "Full Stack Developer Intern",
-      company: "Tap Academy",
-      location: "Bangalore, India",
-      period: "Jan 2026 – Present",
-      type: "Internship",
+      title: "MERN Stack Web Developer",
+      company: "Personal Projects & Practical Experience",
+      location: "Pakistan, Lahore",
+      period: "2026 – Present",
+      type: "Project-Based Experience",
       description: [
-        "Developed full-stack web applications using Java, Spring Boot, and React with a focus on scalable backend systems",
-        "Designed and implemented RESTful APIs to handle business logic, authentication flows, and application workflows",
-        "Built secure authentication and authorization using Spring Security, JWT, and role-based access control",
-        "Integrated PostgreSQL database using Hibernate (JPA) for efficient data management and persistence",
-        "Implemented email verification and password reset workflows using SMTP services",
-        "Contributed to backend architecture design, API optimization, and production-ready deployment practices",
+      "Developed responsive and user-friendly web applications using React.js, JavaScript, Vite.js, tailwind css, bootstrap, HTML, and CSS",
+      "Built full-stack web applications using the MERN stack, including MongoDB, Express.js, React.js, and Node.js",
+      "Developed Haider Chemicals, a business website featuring product categories, product filtering, and WhatsApp-based ordering",
+      "Built Yummy Yummy, a food ordering website with frontend and backend functionality",
+      "Used Git and GitHub for version control, source code management, and project collaboration",
+      "Worked on responsive UI design, component-based architecture, API integration, and application functionality",
       ],
-      tech: ["Java", "Spring Boot", "React", "PostgreSQL", "Hibernate", "JWT", "Spring Security"],
+      tech: [
+      "React.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Git",
+      "GitHub",
+      "Vite",
+    ],
       achievements: [
-        "Reduced API response time by 40% through query optimization",
-        "Implemented comprehensive test coverage using JUnit and Mockito",
-        "Successfully deployed 3 production-ready features"
+      "Developed and maintained complete web applications from frontend to backend",
+      "Built practical e-commerce and food ordering projects",
+      "Deployed web projects and managed source code using GitHub",
       ]
     },
   ];

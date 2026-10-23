@@ -12,6 +12,7 @@ import {
   BriefcaseIcon,
   NewspaperIcon
 } from "@heroicons/react/24/outline";
+import { Download } from "lucide-react";
 
 // Animation variants
 const navVariants = {
@@ -61,7 +62,7 @@ const links = [
   { name: "Skills", href: "/#skills", icon: CogIcon, id: "skills" },
   { name: "Projects", href: "/#projects", icon: FolderIcon, id: "projects" },
   { name: "Experience", href: "/#experience", icon: BriefcaseIcon, id: "experience" },
-  { name: "Blog", route: "/blog", icon: NewspaperIcon, id: "blog" },
+  // { name: "Blog", route: "/blog", icon: NewspaperIcon, id: "blog" },
 ];
 
 const Navbar = () => {
@@ -222,10 +223,10 @@ const Navbar = () => {
               className="flex items-center gap-2 cursor-pointer group"
             >
               <div className="w-8 h-8 rounded-lg bg-blue-600 dark:bg-blue-500 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform duration-200">
-                MK
+                MA
               </div>
               <span className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
-                Mohankumaronly
+                Muhammad Ali
               </span>
             </motion.div>
 
@@ -284,15 +285,35 @@ const Navbar = () => {
                 );
               })}
 
-              <motion.div
-                custom={links.length}
-                variants={linkVariants}
-                initial="hidden"
-                animate="visible"
-                className="ml-2"
-              >
-                <DarkModeToggle />
-              </motion.div>
+
+{/* Resume Button */}
+<motion.a
+  href="/pdf/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  download="Muhammad-Ali-Resume.pdf"
+  custom={links.length}
+  variants={linkVariants}
+  initial="hidden"
+  animate="visible"
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.96 }}
+  className="ml-2 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+>
+  <Download className="h-4 w-4" />
+  <span>Resume</span>
+</motion.a>
+
+<motion.div
+  custom={links.length + 1}
+  variants={linkVariants}
+  initial="hidden"
+  animate="visible"
+  className="ml-2"
+>
+  <DarkModeToggle />
+</motion.div>
+
             </div>
 
             {/* Mobile Controls */}
@@ -369,7 +390,21 @@ const Navbar = () => {
                     )}
                   </motion.div>
                 );
-              })}
+              },
+              
+<a
+  href="/pdf/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  download="Muhammad-Ali-Resume.pdf"
+  onClick={closeMenu}
+  className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+>
+  <Download className="h-4 w-4" />
+  <span>Download Resume</span>
+</a>
+
+              )}
             </div>
           </motion.div>
         </div>

@@ -1,4 +1,4 @@
-# 💼 Mohan Kumar - Portfolio Website
+# 💼 Muhammad Ali - Portfolio Website
 
 ![React](https://img.shields.io/badge/React-18-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)
@@ -12,7 +12,7 @@ A modern, responsive portfolio website built with **React**, **Vite**, and **Tai
 
 ## 🌐 Live Demo
 
-🔗 **Portfolio:** https://mohankumardev.vercel.app/
+🔗 **Portfolio:** https://MuhammadAlidev.vercel.app/
 
 ---
 
@@ -61,7 +61,7 @@ portfolio/
 │
 ├── public/
 │   └── pdf/
-│       └── Mohan_resume.pdf
+│       └── Muhammad-Ali_resume.pdf
 │
 ├── src/
 │   ├── assets/
@@ -104,7 +104,7 @@ portfolio/
 Clone the repository
 
 ```bash
-git clone https://github.com/mohankumaronly/portfolio.git
+git clone https://github.com/fresherali
 ```
 
 Navigate to project folder
@@ -264,19 +264,19 @@ Upload the `dist` folder and configure environment variables.
 
 # 👨‍💻 Author
 
-**Mohan Kumar**
+**Muhammad Ali**
 
 🌐 Portfolio  
-https://mohankumardev.vercel.app/
+https://github.com/fresherali
 
 GitHub  
-https://github.com/mohankumaronly
+https://github.com/fresherali
 
 LinkedIn  
-https://www.linkedin.com/in/mohan-kumar-3151a1308
+https://www.linkedin.com/in/muhammad-ali42-/
 
 Email  
-mohankumaronly81@gmail.com
+m1.ali.h42@gmail.com
 
 ---
 

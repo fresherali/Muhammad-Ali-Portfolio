@@ -9,12 +9,21 @@ import {
   SparklesIcon,
   CheckCircleIcon
 } from "@heroicons/react/24/outline";
+import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaGithub } from "react-icons/fa";
+import {
+  SiJavascript,
+  SiExpress,
+  SiMongodb,
+  SiTailwindcss,
+  SiPostman,
+  SiVite,
+} from "react-icons/si";
 
 const skillGroups = [
   {
     title: "Frontend",
     icon: CodeBracketIcon,
-    skills: ["React", "JavaScript", "Tailwind CSS", "React Router", "Context API"],
+    skills: ["React.js","Vite.js", "JavaScript", "Tailwind CSS", "React Router", "Context API"],
     bgColor: "bg-blue-50 dark:bg-blue-900/20",
     iconColor: "text-blue-600 dark:text-blue-400",
     borderColor: "border-blue-200 dark:border-blue-800"
@@ -22,7 +31,7 @@ const skillGroups = [
   {
     title: "Backend",
     icon: ServerIcon,
-    skills: ["Java", "Spring Boot", "Spring Security", "REST APIs", "JWT Authentication"],
+    skills: ["Node.js", "Express.js", "RESTful APIs", "Server-Side Development"],
     bgColor: "bg-emerald-50 dark:bg-emerald-900/20",
     iconColor: "text-emerald-600 dark:text-emerald-400",
     borderColor: "border-emerald-200 dark:border-emerald-800"
@@ -30,7 +39,7 @@ const skillGroups = [
   {
     title: "Database",
     icon: CircleStackIcon,
-    skills: ["PostgreSQL", "Hibernate (JPA)", "Entity Mapping", "Query Optimization"],
+    skills: ["MongoDB", "CRUD Operations", "Database Integration" ],
     bgColor: "bg-amber-50 dark:bg-amber-900/20",
     iconColor: "text-amber-600 dark:text-amber-400",
     borderColor: "border-amber-200 dark:border-amber-800"
@@ -44,9 +53,9 @@ const skillGroups = [
     borderColor: "border-purple-200 dark:border-purple-800"
   },
   {
-    title: "Tools & DevOps",
+    title: "Tools",
     icon: WrenchScrewdriverIcon,
-    skills: ["Git", "GitHub", "Postman", "Neon DB", "Environment Variables"],
+    skills: ["Git", "GitHub", "Postman", "npm", "VS Code"],
     bgColor: "bg-gray-50 dark:bg-gray-800/50",
     iconColor: "text-gray-600 dark:text-gray-400",
     borderColor: "border-gray-200 dark:border-gray-700"
@@ -54,8 +63,18 @@ const skillGroups = [
 ];
 
 const techTags = [
-  "Java", "Spring Boot", "React", "PostgreSQL", 
-  "JWT", "REST APIs", "Tailwind CSS", "Git"
+  { name: "HTML5", icon: FaHtml5, color: "text-orange-600" },
+  { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+  { name: "React", icon: FaReact, color: "text-cyan-500" },
+  { name: "Vite.js", icon: SiVite, color: "text-purple-500" },
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-800 dark:text-gray-200" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-500" },
+  { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
+  { name: "GitHub", icon: FaGithub, color: "text-gray-900 dark:text-white" },
+  { name: "Postman", icon: SiPostman, color: "text-orange-500" },
 ];
 
 const Skills = () => {
@@ -191,7 +210,7 @@ const Skills = () => {
                 </h4>
                 <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
                   <SparklesIcon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                  <span>2+ years of hands-on experience</span>
+                  <span>1+ years of hands-on experience</span>
                 </div>
               </div>
             </div>
@@ -209,19 +228,24 @@ const Skills = () => {
             Technologies I Work With
           </h4>
           <div className="flex flex-wrap justify-center gap-2.5">
-            {techTags.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.05, duration: 0.3 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -2 }}
-                className="px-4 py-2 text-xs sm:text-sm font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                {tech}
-              </motion.span>
-            ))}
+{techTags.map((tech, index) => {
+  const Icon = tech.icon;
+
+  return (
+    <motion.span
+      key={tech.name}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: index * 0.05, duration: 0.3 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -2 }}
+      className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
+    >
+      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 ${tech.color}`} />
+      {tech.name}
+    </motion.span>
+  );
+})}
           </div>
         </motion.div>
       </div>
