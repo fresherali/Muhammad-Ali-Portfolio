@@ -113,53 +113,76 @@ const Navbar = () => {
     }
   }, [navbarHeight]);
 
-  const handleHashLinkClick = (e, href, sectionId) => {
-    e.preventDefault();
-    
-    const [path, hash] = href.split('#');
-    
-    if (sectionId) {
-      setActiveSection(sectionId);
-    }
-    
-    if (location.pathname === path || (path === '/' && location.pathname === '/')) {
+
+const handleHashLinkClick = (e, href, sectionId) => {
+  e.preventDefault();
+
+  const [path, hash] = href.split("#");
+
+  closeMenu();
+
+  if (sectionId) {
+    setActiveSection(sectionId);
+  }
+
+  // If already on the home page, scroll directly
+  if (location.pathname === path) {
+    const scrollToSection = () => {
       const element = document.getElementById(hash);
+
       if (element) {
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 20;
-        
+        const elementPosition =
+          element.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight -
+          20;
+
         window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
+          top: elementPosition,
+          behavior: "smooth",
         });
       }
-    } else {
-      navigate(`${path}#${hash}`);
-    }
-    
-    closeMenu();
-  };
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToSection);
+    });
+  } else {
+    // Navigate to home page and then the requested section
+    navigate(`${path}#${hash}`);
+  }
+};
+
 
   // Handle hash on load
-  useEffect(() => {
-    if (location.hash) {
-      const hash = location.hash.substring(1);
-      const element = document.getElementById(hash);
-      
-      setTimeout(() => {
-        if (element) {
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 20;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-          setActiveSection(hash);
-        }
-      }, 100);
+
+useEffect(() => {
+  if (!location.hash) return;
+
+  const hash = location.hash.substring(1);
+
+  const timer = setTimeout(() => {
+    const element = document.getElementById(hash);
+
+    if (element) {
+      const elementPosition =
+        element.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight -
+        20;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+
+      setActiveSection(hash);
     }
-  }, [location, navbarHeight]);
+  }, 300);
+
+  return () => clearTimeout(timer);
+}, [location.pathname, location.hash, navbarHeight]);
+
 
   // Intersection Observer for active section
   useEffect(() => {
@@ -321,8 +344,11 @@ const Navbar = () => {
               <DarkModeToggle />
 
               <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={toggleMobileMenu}
+              type="button"
+  aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+  aria-expanded={isMobileMenuOpen}
+  whileTap={{ scale: 0.9 }}
+  onClick={toggleMobileMenu}
                 className="p-2 rounded-lg bg-gray-50/80 dark:bg-gray-800/30 text-gray-700 dark:text-gray-300 hover:bg-gray-100/80 dark:hover:bg-gray-700/30 transition-all duration-200"
               >
                 {isMobileMenuOpen ? (
@@ -335,78 +361,67 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu */}
-          <motion.div
-            variants={mobileMenuVariants}
-            initial="closed"
-            animate={isMobileMenuOpen ? "open" : "closed"}
-            className="md:hidden overflow-hidden"
-          >
-            <div className="pt-2 pb-3 flex flex-col gap-0.5 border-t border-gray-100/50 dark:border-gray-800/50 mt-2">
-              {links.map((link) => {
-                const isActive = link.id ? isHashLinkActive(link.id) : false;
-                
-                return (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {link.href ? (
-                      <a
-                        href={link.href}
-                        onClick={(e) => handleHashLinkClick(e, link.href, link.id)}
-                        className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                          isActive
-                            ? "bg-blue-50/80 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/30"
-                        }`}
-                      >
-                        <link.icon className="w-5 h-5" />
-                        <span>{link.name}</span>
-                        {isActive && (
-                          <motion.div
-                            layoutId="mobileIndicator"
-                            className="ml-auto w-1 h-5 rounded-full bg-blue-600 dark:bg-blue-400"
-                            transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                          />
-                        )}
-                      </a>
-                    ) : (
-                      <NavLink
-                        to={link.route}
-                        onClick={closeMenu}
-                        className={({ isActive: isRouteActive }) =>
-                          `flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                            isRouteActive
-                              ? "bg-blue-50/80 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                              : "text-gray-600 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/30"
-                          }`
-                        }
-                      >
-                        <link.icon className="w-5 h-5" />
-                        <span>{link.name}</span>
-                      </NavLink>
-                    )}
-                  </motion.div>
-                );
-              },
-              
-<a
-  href="/pdf/resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  download="Muhammad-Ali-Resume.pdf"
-  onClick={closeMenu}
-  className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+<motion.div
+  variants={mobileMenuVariants}
+  initial="closed"
+  animate={isMobileMenuOpen ? "open" : "closed"}
+  className="md:hidden overflow-hidden"
 >
-  <Download className="h-4 w-4" />
-  <span>Download Resume</span>
-</a>
+  <div className="pt-2 pb-3 flex flex-col gap-0.5 border-t border-gray-100/50 dark:border-gray-800/50 mt-2">
 
-              )}
-            </div>
-          </motion.div>
+    {links.map((link) => {
+      const isActive = link.id
+        ? isHashLinkActive(link.id)
+        : false;
+
+      return (
+        <motion.div
+          key={link.name}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <a
+            href={link.href}
+            onClick={(e) =>
+              handleHashLinkClick(e, link.href, link.id)
+            }
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+              isActive
+                ? "bg-blue-50/80 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/30"
+            }`}
+          >
+            <link.icon className="w-5 h-5" />
+            <span>{link.name}</span>
+
+            {isActive && (
+              <motion.div
+                layoutId="mobileIndicator"
+                className="ml-auto w-1 h-5 rounded-full bg-blue-600 dark:bg-blue-400"
+              />
+            )}
+          </a>
+        </motion.div>
+      );
+    })}
+
+    {/* Mobile Resume Button */}
+    <a
+      href="/pdf/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      download="Muhammad-Ali-Resume.pdf"
+      onClick={closeMenu}
+      className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+    >
+      <Download className="h-4 w-4" />
+      <span>Download Resume</span>
+    </a>
+
+  </div>
+</motion.div>
+
         </div>
       </motion.nav>
 

@@ -69,6 +69,38 @@ const projects = [
     swagger: "",
     category: "Food-Ordring website"
   },
+    {
+    id: 3,
+    title: "Meridian Academy",
+    image: project2,
+    desc: "A modern, responsive educational academy website designed to make academic information and learning opportunities more accessible to students and parents. The platform brings On-Campus Classes, Home Tuition, and Online Learning together in one place, allowing users to explore educational services, browse Matriculation and Intermediate courses (Grades 9–12), understand fee structures, and submit admission inquiries.",
+    features: [
+      "Modern and responsive educational website",
+      "On-Campus Classes information and facilities",
+      "One-to-one Home Tuition services",
+      "Flexible Online Learning solutions",
+      "Comprehensive Matriculation and Intermediate courses",
+      "Science and Arts subject information",
+      "F.Sc Pre-Medical and other Intermediate courses",
+      "Dedicated About Us page with mission and vision",
+      "Detailed educational services page",
+      "Dedicated fee structure section",
+      "Dedicated homepage with academy introduction",
+      "Contact Us page with admission inquiry form",
+      "Academic advisor contact information",
+      "Responsive navigation across devices",
+      "Smooth animations and page transitions",
+      "Reusable React components",
+      "React Router navigation between pages"
+    ],
+
+    tech: "React.js, JavaScript, Vite, Tailwind CSS, React Router, HTML5, CSS3",
+    github: "https://github.com/fresherali/Meridian-Academy",
+    live: "https://meridian-academy-alpha.vercel.app/",
+    backend: "",
+    swagger: "",
+    category: "Education & E-Learning"
+  },
 ];
 
 const openExternal = (url) => {

@@ -12,7 +12,7 @@ A modern, responsive portfolio website built with **React**, **Vite**, and **Tai
 
 ## 🌐 Live Demo
 
-🔗 **Portfolio:** https://MuhammadAlidev.vercel.app/
+🔗 **Portfolio:** https://muhammad-ali-portfolio-bice.vercel.app/#
 
 ---
 
@@ -24,7 +24,7 @@ A modern, responsive portfolio website built with **React**, **Vite**, and **Tai
 - Interactive Skills section
 - Featured Projects showcase
 - Experience timeline
-- Contact form with EmailJS
+- Contact form 
 - Resume download
 - Social media integration
 - Fast loading with Vite
@@ -104,7 +104,7 @@ portfolio/
 Clone the repository
 
 ```bash
-git clone https://github.com/fresherali
+git clone https://github.com/fresherali/Muhammad-Ali-Portfolio.git
 ```
 
 Navigate to project folder
@@ -139,32 +139,6 @@ npm run preview
 
 ---
 
-# 🔑 Environment Variables
-
-Create a `.env` file in the root directory.
-
-```env
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-```
-
----
-
-# 📧 EmailJS Setup
-
-1. Create an account at https://www.emailjs.com/
-2. Create an Email Service.
-3. Create an Email Template.
-4. Copy:
-
-- Public Key
-- Service ID
-- Template ID
-
-5. Add them into your `.env` file.
-
----
 
 # 📱 Responsive Design
 
@@ -280,11 +254,7 @@ m1.ali.h42@gmail.com
 
 ---
 
-# 📄 License
 
-This project is licensed under the **MIT License**.
-
----
 
 # ⭐ Show Your Support
 
